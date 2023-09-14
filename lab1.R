@@ -26,4 +26,20 @@ abline(0, 1, lty=2, col='red')
 
 
 ## Checkpoint 2
+# Assume a random variable, X^M, which is defined as the maximum of three independent random variables, each one uniformly distributed in [0,1]
+# X^M=max{U(0,1),U(0,1),U(0,1)}
+# Compute the median and plot the density function of X^M, and compare it vs. the corresponding values obtained via analysis. 
 
+N <- 1000
+trials <- 1000
+out <- sapply(1:trials, function(i) {
+  u1 <- runif(N, 0, 1)
+  u2 <- runif(N, 0, 1)
+  u3 <- runif(N, 0, 1)
+  return(pmax(u1, u2, u3))
+})
+median = median(out)
+den = density(out)  # Value calculated by hand is approx. 0.793
+plot(den)
+f = function(x) 3*x^2  # Function calculated by hand
+curve(f(x), add=TRUE, lty=2, col="red")
