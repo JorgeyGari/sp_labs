@@ -8,3 +8,4 @@ If you are a student who has been assigned this project as well, please **do not
 ## Descriptions for each laboratory session
 1. Introduction to R
 2. Discrete-Time Markov Chains
+3. Poisson Processes
