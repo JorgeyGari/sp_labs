@@ -101,22 +101,21 @@ inter_agg <- diff(phones_agg)
 
  # and compare it vs. an exponential distribution.
 
-qqplot(inter_agg, rexp(1/mean(inter_agg)))
-abline(0, 1/mean(inter_agg), lty = 2, col="red")
+qqplot(inter_agg, rexp(100, 1/mean(inter_agg)))
+abline(0, 1, lty = 2, col="red")
 
 
  # Check whether it has memory.
 
 inter_agg2 <- inter_agg[inter_agg>median(inter_agg)] - median(inter_agg)
 qqplot(inter_agg, inter_agg2)
-abline(0, 1/mean(inter_agg), lty=2, col="red")
+abline(0, 1, lty=2, col="red")
 
   # It has memory because the slope of the linear regression doesn't match anymore.
 
  # Is this a Poisson process? Why? 
 
-  # It cannot be a Poisson process since it has memory, and Poisson processes
-  # are memoryless.
+  # Yes, because the slope still matches.
 
  # What is the total arrival rate?
 
