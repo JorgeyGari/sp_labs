@@ -9,3 +9,5 @@ If you are a student who has been assigned this project as well, please **do not
 1. Introduction to R
 2. Discrete-Time Markov Chains
 3. Poisson Processes
+4. Queuing Systems and Simulation with `simmer`
+5. Brownian Motion
